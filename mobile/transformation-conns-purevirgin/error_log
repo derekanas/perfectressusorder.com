@@ -1,0 +1,1 @@
+[23-May-2016 03:17:54 America/Chicago] PHP Parse error:  syntax error, unexpected ''.$_GET["code"].'' (T_CONSTANT_ENCAPSED_STRING) in /home3/perfectress/public_html/mobile/transformation-conns-purevirgin/natural-color.php on line 56

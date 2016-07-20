@@ -1,0 +1,13 @@
+[17-May-2016 05:02:36 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home3/perfectress/public_html/mobile/view-cart.php on line 169
+[17-May-2016 05:06:30 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home3/perfectress/public_html/mobile/view-cart.php on line 169
+[17-May-2016 05:08:21 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home3/perfectress/public_html/mobile/view-cart.php on line 153
+[17-May-2016 05:08:45 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home3/perfectress/public_html/mobile/view-cart.php on line 153
+[17-May-2016 05:11:42 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home3/perfectress/public_html/mobile/view-cart.php on line 170
+[17-May-2016 05:13:16 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home3/perfectress/public_html/mobile/view-cart.php on line 154
+[22-May-2016 21:47:40 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home3/perfectress/public_html/mobile/order-summary.php on line 185
+[22-May-2016 23:30:04 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home3/perfectress/public_html/mobile/order-summary.php on line 185
+[22-May-2016 23:56:02 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home3/perfectress/public_html/mobile/order-summary.php on line 185
+[23-May-2016 05:11:35 America/Chicago] PHP Parse error:  syntax error, unexpected '']!=""){echo '' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home3/perfectress/public_html/mobile/view-cart.php on line 139
+[23-May-2016 22:15:18 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home3/perfectress/public_html/mobile/order-summary.php on line 185
+[24-May-2016 23:13:52 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home3/perfectress/public_html/mobile/send-contact.php on line 141
+[02-Jun-2016 02:19:20 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home3/perfectress/public_html/mobile/order-summary.php on line 185
