@@ -43,7 +43,7 @@ session_start();
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="_index.php"><img src="img/logo.png"></a>
+          <a class="navbar-brand" href="index.php"><img src="img/logo.png"></a>
         </div>
          <div class="logo-right"><h3>Perfectress US Online Order</h3></div>
       </div>

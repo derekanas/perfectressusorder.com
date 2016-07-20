@@ -1,0 +1,2 @@
+[19-Jul-2016 11:15:57 America/Chicago] PHP Warning:  mysql_close() expects parameter 1 to be resource, null given in /home3/perfectress/public_html/db/dbclose.php on line 2
+[19-Jul-2016 14:19:46 America/Chicago] PHP Warning:  mysql_close() expects parameter 1 to be resource, null given in /home3/perfectress/public_html/db/dbclose.php on line 2

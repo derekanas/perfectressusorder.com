@@ -8,9 +8,9 @@ $connect = mysql_connect($hostname, $username, $password) or trigger_error(mysql
 
 $tbname="tbllogin";
 $hostname = "localhost";
-$database = "perfectr_of";
-$username = "root";
-$password = ""; 
+$database = "perfectr_orderform";
+$username = "perfectr_user";
+$password = "!@#secret#@!"; 
 $connect = mysql_connect($hostname, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR);
 
 ?>

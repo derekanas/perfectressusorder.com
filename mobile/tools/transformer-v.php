@@ -19,7 +19,7 @@ if (isset($_POST['addtocart'])){
 
 	//if(isset($_POST['tool-item'])){
 
-	$itemtool = "Transformer LW";
+	$itemtool = "Transformer V";
 	$escitemtool = mysql_escape_string($itemtool); 
 	$_SESSION['itemtool'] = $escitemtool;
 
@@ -133,7 +133,7 @@ switch($_GET["action"]) {
    
         
         <center><img src="https://www.perfectressusorder.com/img/tools/big/bigtool15.png" width="250">
-        <h3><u>TRANSFORMER LW</u></h3>
+        <h3><u>TRANSFORMER V</u></h3>
         </center>
         
         

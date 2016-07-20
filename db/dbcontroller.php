@@ -1,9 +1,11 @@
 <?php
 class DBController {
   private $host = "localhost";
-  private $user = "root";
-  private $password = "";
-  private $database = "perfectr_of";
+  private $user = "perfectr_user";
+  private $password = "!@#secret#@!";
+  private $database = "perfectr_orderform";
+  
+
   
   function __construct() {
     $conn = $this->connectDB();
@@ -32,7 +34,7 @@ class DBController {
     if(!empty($resultset))
       return $resultset;
     else{
-      echo "no records found";
+      return null;
     }
   }
   

@@ -174,8 +174,8 @@ $_SESSION['sumshipcountry'] = $shipcountry;
 				$item_total = 0;
 			?>  
         <div class="greyborder2">
-        <div class="ui-grid-b"
->            <div class="ui-block-a"><div class="ui-body ui-body-d"><h3>Name</h3></div></div>
+        <div class="ui-grid-b">
+            <div class="ui-block-a"><div class="ui-body ui-body-d"><h3>Name</h3></div></div>
             <div class="ui-block-b"><div class="ui-body ui-body-d center"><h3>Qty</h3></div></div>
             <div class="ui-block-c"><div class="ui-body ui-body-d center"><h3>Price</h3></div></div>
         </div><!-- /grid-b -->
