@@ -204,8 +204,6 @@ switch($_GET["action"]) {
       // $email_message .= "Total Cost:".$finalamount."<br/>";
 
 
-test
-
 //=========================== END OF AUTO RESPONDER ============================
 
 
