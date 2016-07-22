@@ -30,7 +30,7 @@ if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
   case "add":
     if(!empty($_POST["quantity"])) {
-		$productByCode = $db_handle->runQuery('SELECT * FROM tblproducthair WHERE itemcode="'.$_GET["code"].'" AND hairtexture="'.$texture.'" AND hairlength="'.$hairlength.'" AND haircolour="'.$escitemcolor.'" AND size="'.$hairsize.'"');
+		$productByCode = $db_handle->runQuery('SELECT * FROM tblproducthair WHERE itemcode LIKE "'.$_GET["code"].'" AND hairtexture="'.$texture.'" AND hairlength="'.$hairlength.'" AND haircolour="'.$escitemcolor.'" AND size="'.$hairsize.'"');
 		$itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["item"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"], 'hairtype'=>$productByCode[0]["hairtype"], 'hairtexture'=>$productByCode[0]["hairtexture"], 'hairlength'=>$productByCode[0]["hairlength"], 'haircolour'=>$productByCode[0]["haircolour"]));
       
 		if((!empty($_SESSION["cart_item"])) && (!empty($productByCode))) {
@@ -154,7 +154,7 @@ switch($_GET["action"]) {
         <h3><u>LIGHTEST ASH BROWN<br>#21A</u></h3>
         </center>
         
-        <form method="post" id="addtocartform" name="addtocartform" action="lgtst-ash-bwn.php?action=add&code=<?php echo "RREN" ?>" onsubmit="return validateForm()" rel="external" data-ajax="false">
+        <form method="post" id="addtocartform" name="addtocartform" action="lgtst-ash-bwn.php?action=add&code=<?php echo "RREN-%" ?>" onsubmit="return validateForm()" rel="external" data-ajax="false">
         <div class="ui-grid-a">
               <div class="ui-block-a in-between-spacing">
               	<label for="quantity"><h3>Select Quantity:</h3></label>

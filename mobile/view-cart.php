@@ -136,7 +136,7 @@ if (isset($_POST['submitordersummary'])){
              <div class="ui-grid-c my-order-content ui-responsive border-bottom">
                 <div class="ui-block-a">
                 <div class="ui-body ui-body-d">
-                	<?php echo $item["name"]; echo "<br/><br/><span style='color:purple;'>"; echo $item['hairtexture']; echo "<br/>"; echo $item['haircolour']; echo"<br/>"; echo $item['hairlength']; if($item['hairlength']!=""){echo '"';} echo "</span>"; ?>
+                	<?php echo $item["hairtype"] ."<br/>".$item["name"]; echo "<br/><br/><span style='color:purple;'>"; echo $item['hairtexture']; echo "<br/>"; echo $item['haircolour']; echo"<br/>"; echo $item['hairlength']; if($item['hairlength']!=""){echo '"';} echo "</span>"; ?>
 					<!--<br><br><span class="purple">Natural Body NB Jet Black #1 14”/20cm</span>-->
                 </div></div>
                 <div class="ui-block-b"><div class="ui-body ui-body-d width-short"><input type="number" readonly="readonly" name="number" pattern="[0-9]*" id="number-pattern" value="<?php echo $item["quantity"]; ?>" class="input-center"></div></div>
