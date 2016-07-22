@@ -153,7 +153,7 @@ switch($_GET["action"]) {
         <h3><u>SILVER GREY<br>#60S</u></h3>
         </center>
         
-        <form method="post" id="addtocartform" name="addtocartform" action="silver-grey.php?action=add&code=<?php echo "TW" ?>" onsubmit="return validateForm()" rel="external" data-ajax="false">
+        <form method="post" id="addtocartform" name="addtocartform" action="silver-grey.php?action=add&code=<?php echo "RREN-PTW" ?>" onsubmit="return validateForm()" rel="external" data-ajax="false">
         <div class="ui-grid-a">
               <div class="ui-block-a in-between-spacing">
                 <label for="quantity"><h3>Select Quantity:</h3></label>
