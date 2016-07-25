@@ -19,7 +19,7 @@ if (!$_SESSION['emailadd']) {
 
 if (isset($_POST['addtocart'])){
 
-$itemcolor = "#  B6"; 
+$itemcolor = "# B6"; 
 $escitemcolor = mysql_escape_string($itemcolor); 
 $_SESSION['itemcolor'] = $escitemcolor;
 
