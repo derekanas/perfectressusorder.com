@@ -25,6 +25,7 @@ $cnfrmshipstate = $_SESSION['state'];
 $cnfrmshipcode = $_SESSION['zipcode'];
 $cnfrmshipcountry = $_SESSION['country'];
 $remarks = $_SESSION['remarks'];
+$order_number = $_SESSION['order_number'];
 require_once("db/dbcontroller.php");
 $db_handle = new DBController();
 if(!empty($_GET["action"])) { 
@@ -168,12 +169,7 @@ $_SESSION['sumshipcountry'] = $shipcountry;
 
 
     <div>
-      <?php 
 
-      $order_number = rand(1, 9000);
-      $_SESSION['order_number'] = $order_number;
-
-       ?>
       <h3>Order Number:<span style="color:#823682;"><?php echo "#".$order_number; ?> </span></h3>
     </div>
 

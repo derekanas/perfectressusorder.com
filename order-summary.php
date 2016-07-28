@@ -166,6 +166,17 @@ $_SESSION['sumshipadd'] = $shipadd;
       <h3 style="padding-left:11px;">Order Summary <!-- - <span style="color:#803680;">Step 1 of 3</span> --></h3>
     </div>
 
+    <div>
+      <?php 
+      $today = date("Ymd");
+      $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
+      $order_number = $today . $rand;
+      // $order_number = rand(1, 9000);
+      $_SESSION['order_number'] = $order_number;
+      
+       ?>
+      <h3>Order Number:<span style="color:#823682;"><?php echo "#".$order_number; ?> </span></h3>
+    </div>
 
 
     <div>
