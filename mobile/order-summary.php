@@ -127,6 +127,22 @@ $_SESSION['sumshipadd'] = $shipadd;
         <img src="images/breadcrumbs3.jpg" class="img-autoscale">
         <p><img src="images/exclamationmark.png" align="left" width="39" style="padding-right:10px;">Your order is almost complete. Please check summary before you confirm the order.</p>
         <h2 class="bold">Order Summary</h2>
+
+
+    <div>
+      <?php 
+      $today = date("Ymd");
+      $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
+      $order_number = $today . $rand;
+      // $order_number = rand(1, 9000);
+      $_SESSION['order_number'] = $order_number;
+      
+       ?>
+      <h3>Order Number:<span style="color:#823682;"><?php echo "#".$order_number; ?> </span></h3>
+    </div>
+    
+
+
         <h2 class="bold purple">Customer Details</h2>
         
         <form>

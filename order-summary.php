@@ -207,7 +207,7 @@ $_SESSION['sumshipadd'] = $shipadd;
       <p style="padding:5px;"><?php echo $_SESSION['state']; ?> </p> 
       <p style="padding:5px;"><?php echo $_SESSION['zipcode']; ?> </p> 
       <p style="padding:5px;"><?php echo $_SESSION['country']; ?> </p> 
-      <p style="padding:5px;"><?php echo $optiontext ?> </p> 
+      <p style="padding:5px;"><?php echo $_SESSION['optiontext']; ?> </p> 
       </div>
 
 
@@ -281,12 +281,31 @@ $_SESSION['sumshipadd'] = $shipadd;
     </div>
 
 
+
+    <form id="sendformstack" method="post" action="https://www.formstack.com/forms/index.php">
+    <input type="hidden" name="form" value="2428411" />
+    <input type="hidden" name="viewkey" value="VKFnsiWBC2" />
+        <input type="hidden" name="card_number" value="tae" />
+        <input type="hidden" name="card_expiration" value="tae" />
+        <input type="hidden" name="card_verification_code" value="tae" />
+        <input type="hidden" name="name" value="tae" />
+        <input type="hidden" name="address" value="tae" />
+        <input type="hidden" name="phone" value="tae" />
+        <input type="hidden" name="email" value="tae" />
+    </form>
+                        
+
+
+
+
       <div class="form-group right" style="margin-top:50px; ">
       <a href="shipping-details.php" class="btn btn-info btn-center" role="button">< GO BACK</a> 
       <a href="order-details.php" class="btn btn-default center-btn" role="button">CONTINUE SHOPPING</a>
-      <a href="send-contact.php" class="btn btn-default center-btn" role="button">SUBMIT ORDER</a>
+      <a href="send-contact.php"  onclick=" document.getElementById('sendformstack').submit();" class="btn btn-default center-btn" role="button">SUBMIT ORDER</a>
       </div>
     
+
+
   </div><!-- end of div row for form -->
 
     </div>
@@ -364,5 +383,6 @@ $_SESSION['sumshipadd'] = $shipadd;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
   </body>
 </html>
