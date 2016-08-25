@@ -144,7 +144,7 @@ switch($_GET["action"]) {
     <div class="col-xs-8">
     <img src="img/step2.jpg" style="margin-bottom:20px;width:750px;">
     <div class="panel panel-default">
-      <div class="panel-heading">Tools</div>
+      <div class="panel-heading">Kit Options</div>
       <div class="panel-body">
         <form method="post" id="addtocartform" action="starter-kit-product.php?action=add&code=<?php echo "KIT" ?>">
 
@@ -160,7 +160,7 @@ switch($_GET["action"]) {
           <p>PERFECTRESS DELUXE KIT - 2 Systems Combined <br/><span style="color:#803680;">USD$499</span></p>
 
           <p>Contents: <br/>Adaptability Ring, Transformer C, Reformer, Connector L, Connector L Loops, Tape Pressing Tool, Tape Removal Tool, Removing Mats,
-            Precut Adhesive Tapes, Prefab Tapes, Velcro Strips, Tools Belt, Flat Bristle Brush, Video, Tri-folds, Deluxe Aluminium Case
+            Precut Adhesive Tapes, Prefab Tapes, Velcro Strips, Tools Belt, Flat Bristle Brush, Tri-folds, Deluxe Aluminium Case
           </p>
 
           </div>
@@ -177,10 +177,10 @@ switch($_GET["action"]) {
           </div>
 
           <div class="col-xs-9">
-          <p>PERFECTRESS TAPE WEFT STARTER KIT <br/><span style="color:#803680;">USD$195</span></p>
+          <p>PERFECTRESS TAPE WEFT STARTER KIT <br/><span style="color:#803680;">USD$199</span></p>
 
           <p>Contents: <br/>Adaptability Ring, Tape Pressing Tool, Tape Removing Tool,
-          Precut Adhesive Tapes, Prefab Tapes, Removing Mats, Velcro Strips, Video, Trifolds, Aluminium Case.
+          Precut Adhesive Tapes, Prefab Tapes, Removing Mats, Velcro Strips, Trifolds, Aluminium Case.
 
           </p>
 
@@ -199,8 +199,7 @@ switch($_GET["action"]) {
           <div class="col-xs-9">
           <p>PERFECTRESS CONNECTIONS STARTER KIT <br/><span style="color:#803680;">USD$299</span></p>
 
-          <p>Contents: <br/>Adaptability Ring, Transformer C, Reformer, Connector L, Connector L Loops, Velcro Strips, Video,
-            Tri-folds, Aluminium Case.
+          <p>Contents: <br/>Adaptability Ring, Transformer C, Reformer, Connector L, Connector L Loops, Velcro Strips, Tri-folds, Aluminium Case.
           </p>
 
           </div>
@@ -273,14 +272,15 @@ switch($_GET["action"]) {
         <div class="row">
           <div class="col-xs-3">
           <input type="radio" class="radio_item" value="Perfectress Multi Weft Starter Kit" onClick="CB(this.value);" name="starter-kit" id="starter7">
-          <label class="label_item" for="starter7"> <img src="img/starterkits/multiweft.jpg"></label>
+<!--           <label class="label_item" for="starter7"> <img src="img/starterkits/multiweft.jpg"></label> -->
+
+<label class="label_item" for="starter7"> <img src="http://placehold.it/162x225"></label>
           </div>
 
           <div class="col-xs-9">
           <p>PERFECTRESS MULTI WEFT STARTER KIT <br/><span style="color:#803680;">USD$299</span></p>
 
-          <p>Contents: <br/>Adaptability Ring, Transformer LW, Reformer, Hair Pulling Loops, Hair Drawing Tool, Connection Points, Perfect Clips,
-            Velcro Strips, Video, Tri-folds, Aluminium Case
+          <p>Contents: <br/>Adaptability Ring, Transformer LW, Reformer, Hair Pulling Loops, Hair Drawing Tool, Velcro Strips, Tri-folds, Aluminium Case
           </p>
 
           </div>

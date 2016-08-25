@@ -4,3 +4,6 @@
 [12-Jul-2016 01:52:49 America/Chicago] PHP Warning:  include(index.php): failed to open stream: No such file or directory in /home3/perfectress/public_html/mobile/tapeweft-purevirgin/natural-body.php on line 15
 [12-Jul-2016 01:52:49 America/Chicago] PHP Warning:  include(index.php): failed to open stream: No such file or directory in /home3/perfectress/public_html/mobile/tapeweft-purevirgin/natural-body.php on line 15
 [12-Jul-2016 01:52:49 America/Chicago] PHP Warning:  include(): Failed opening 'index.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home3/perfectress/public_html/mobile/tapeweft-purevirgin/natural-body.php on line 15
+[29-Jul-2016 04:26:38 America/Chicago] PHP Warning:  include(index.php): failed to open stream: No such file or directory in /home3/perfectress/public_html/mobile/tapeweft-purevirgin/pure-virgin-hair-length.php on line 12
+[29-Jul-2016 04:26:38 America/Chicago] PHP Warning:  include(index.php): failed to open stream: No such file or directory in /home3/perfectress/public_html/mobile/tapeweft-purevirgin/pure-virgin-hair-length.php on line 12
+[29-Jul-2016 04:26:38 America/Chicago] PHP Warning:  include(): Failed opening 'index.php' for inclusion (include_path='.:/opt/php54/lib/php') in /home3/perfectress/public_html/mobile/tapeweft-purevirgin/pure-virgin-hair-length.php on line 12

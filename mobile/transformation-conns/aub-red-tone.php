@@ -85,12 +85,12 @@ switch($_GET["action"]) {
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <!-- Include the jQuery library -->
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <!-- Include the jQuery Mobile library -->
   <script src="../js/jquery.mobile-1.4.5.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="../js/index.js"></script>
-  <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+  <script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
   <script src="../js/quantity.js"></script>
   
   <meta charset="UTF-8">

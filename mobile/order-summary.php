@@ -152,11 +152,12 @@ $_SESSION['sumshipadd'] = $shipadd;
             <label for="first-name"><h3>First Name</h3></label>
             <input type="text" name="first-name" id="first-name" readonly="readonly" class="grey-border-input" value="<?php echo $_SESSION['firstname']; ?>">
         
-        
+            <label for="last-name"><h3>Last Name</h3></label>
+            <input type="text" name="last-name" id="last-name" readonly="readonly" class="grey-border-input" value="<?php echo $_SESSION['lastname']; ?>">
           <div class="ui-grid-a">
               <div class="ui-block-a in-between-spacing">
-                <label for="last-name"><h3>Last Name</h3></label>
-                <input type="text" name="last-name" id="last-name" readonly="readonly" class="grey-border-input" value="<?php echo $_SESSION['lastname']; ?>">
+               <label for="salon-name"><h3>Salon Name</h3></label>
+              <input type="text" readonly="readonly"  name="salon-name" id="salon-name" class="grey-border-input" value="<?php echo $_SESSION['salonname']; ?>">
               </div>
               
               <div class="ui-block-b">

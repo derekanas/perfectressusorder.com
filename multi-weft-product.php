@@ -192,7 +192,7 @@ switch($_GET["action"]) {
       <label for="input-hair-size">Select Size:</label>
       <br/>
       <select class="form-control" name="input-hair-size" id="input-hair-size" style="width:70%;">
-        <option value='SINGLEPLUS'>Single Plus (1 pack - 8pcs )</option>
+        <option value='SINGLEPLUS'>Single Plus (1 pack - 1pc )</option>
       </select>
       </div>
     </div><!-- end of row selection options -->

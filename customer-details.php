@@ -95,7 +95,7 @@ $_SESSION['state'] =  $_POST['inputstate'];
 $_SESSION['zipcode'] = $_POST['inputzipcode'];
 $_SESSION['city'] = $_POST['inputcity'];
 $_SESSION['country'] = $_POST['inputcountry'];
-
+$_SESSION['salonname'] = $_POST['inputsalonname'];
 
 
 $_SESSION['existingcc'] = $_POST['existingcc'];
@@ -254,7 +254,7 @@ die();
       <div class="col-xs-12" style="margin-top:30px;">     
       <h4>Do you have your credit card details with us?</h4>
       <div class="radio">
-        <label><input type="radio" onclick="document.getElementById('existingcc').disabled = false;document.getElementById('proceed').disabled = false;" id="radiocc1" name="creditcardinfo" value="radiocc1" ><span style="color:#833682" >YES</span>, please enter the last 4 digits of your credit card number</label>
+        <label><input type="radio" id="radiocc1" name="creditcardinfo" value="radiocc1" ><span style="color:#833682" >YES</span>, please enter the last 4 digits of your credit card number</label>
         <div class="row" style="margin-top:20px;">
         <div class="col-xs-3 col-xs-offset-1">
         <p>XXXX - XXXX - XXXX - </p>
@@ -266,7 +266,7 @@ die();
       </div>
 
       <div class="radio">
-        <label><input type="radio" onclick="document.getElementById('othercc').disabled = false;document.getElementById('proceed').disabled = false;"  id="radiocc2" name="creditcardinfo" value="radiocc2" ><span style="color:#833682" >No, I want to use another Credit Card</span><br/>(please fill in your credit card details below)</label>
+        <label><input type="radio"  id="radiocc2" name="creditcardinfo" value="radiocc2" ><span style="color:#833682" >No, I want to use another Credit Card</span><br/>(please fill in your credit card details below)</label>
         </div>        
 
 
@@ -275,11 +275,11 @@ die();
       <div class="form-group">
         <div class="col-xs-6">
         <label for="inputcardholder">Cardholder Name</label>
-        <input type="text" class="form-control" id="cardholdername" name="inputcardholder" >
+        <input type="text" class="form-control" id="cardholdername" name="inputcardholder" required >
         </div>
         <div class="col-xs-6">
         <label for="inputcc">Credit Card Number</label>
-        <input type="text" class="form-control" id="cardnumber" name="inputcc" placeholder="XXXX - XXXX - XXXX - XXXX"  >
+        <input type="text" class="form-control" id="cardnumber" name="inputcc" placeholder="XXXX - XXXX - XXXX - XXXX" required  >
         </div>
       </div>
 
@@ -288,12 +288,12 @@ die();
       <div class="form-group">
       <div class="col-xs-6" style="margin-top:20px;">
       <label for="inputccdate">Expiration Date</label>
-      <input type="month" class="form-control" id="expdate" name="inputccdate" >
+      <input type="month" class="form-control" id="expdate" name="inputccdate"  required>
       </div>
 
       <div class="col-xs-6" style="margin-top:20px;">
       <label for="inputcvc">CVC</label> 
-      <input type="number" class="form-control" id="cvc" name="inputcvc" placeholder="123" style="width:25%;" >
+      <input type="number" class="form-control" id="cvc" name="inputcvc" placeholder="123" style="width:25%;"  required>
       </div>
 
       </div>
@@ -363,32 +363,37 @@ die();
 
 
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
     <script type="text/javascript">
     $(document).ready(function() {
 
 
 
-    $("#radiocc1").click(function() {
-      $("#othercc").prop("disabled", true);
-    $("#existingcc").prop("disabled", false);
-    
+    $("#radiocc1").click(function() {  
+    $("#existingcc").removeAttr("disabled");
+    $("#proceed").removeAttr("disabled");
+    $("#othercc").attr("disabled","disabled");
 
-
+ // onclick="document.getElementById('proceed').disabled = false;"
     });
 
     $("#radiocc2").click(function() {
 
-      $("#othercc").prop("disabled", false);
-      $("#existingcc").prop("disabled", true);
+      // $("#othercc").prop("disabled", false);
+      // $("#existingcc").prop("disabled", true);
 
+    $("#othercc").removeAttr("disabled");
+    $("#proceed").removeAttr("disabled");
+    $("#existingcc").attr("disabled","disabled");
 
     });
 
     });
 
     </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- validation for safari  -->
     <script type="text/javascript">

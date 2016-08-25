@@ -141,16 +141,16 @@ die();
         
         <form action="" method="post" rel="external" data-ajax="false" >
             <label for="email-add"><h3>Email Address</h3></label>
-            <input type="text" name="inputemail" id="inputemail" class="grey-border-input" value="<?php echo $emailfrmsession; ?>">
+            <input type="text" readonly="readonly" name="inputemail" id="inputemail" class="grey-border-input" value="<?php echo $emailfrmsession; ?>">
             
             <label for="first-name"><h3>First Name</h3></label>
-            <input type="text" name="inputfirstname" id="inputfirstname" class="grey-border-input" value="<?php echo $firstnamefrmsession; ?>">
+            <input type="text" readonly="readonly" name="inputfirstname" id="inputfirstname" class="grey-border-input" value="<?php echo $firstnamefrmsession; ?>">
         
         
           <div class="ui-grid-a">
               <div class="ui-block-a in-between-spacing">
                 <label for="last-name"><h3>Last Name</h3></label>
-                <input type="text" name="inputlastname" id="inputlastname" class="grey-border-input" value="<?php echo $lastnamefrmsession; ?>">
+                <input type="text" readonly="readonly" name="inputlastname" id="inputlastname" class="grey-border-input" value="<?php echo $lastnamefrmsession; ?>">
               </div>
               
               <div class="ui-block-b">
@@ -196,32 +196,32 @@ die();
              <p class="purpleborder">Please ensure that your credit card that is registered with us is valid. If there is any change in credit card details, please contact us at <span class="purple">1-888-220-8520</span> or email at <span class="purple">orders@perfectress.us</span> to revalidate your credit card to successfully complete your order.</p>
              
              <label for="cc-details"><h3>Do you have your credit card details with us?</h3></label>
-        	 <label for="cc-details"><input type="radio" name="creditcardinfo" onclick="document.getElementById('existingcc').disabled = false;document.getElementById('proceed').disabled = false;" id="radiocc1" name="creditcardinfo" value="radiocc1" data-role="none">&nbsp;<span class="purple">YES,</span> please enter the last 4 digits of your credit card number.</label>
+        	 <label for="cc-details"><input type="radio" id="radiocc1" name="creditcardinfo" value="radiocc1" data-role="none">&nbsp;<span class="purple">YES,</span> please enter the last 4 digits of your credit card number.</label>
 		      
              
                 <label for="cc-details"><h3>XXXX - XXXX - XXXX -</h3></label>
-              
-			<input type="number" name="existingcc" id="existingcc" value="" class="grey-text-input" >
-            
-        	 <label for="cc-details"><input type="radio" onclick="document.getElementById('othercc').disabled = false;document.getElementById('proceed').disabled = false;"  id="radiocc2" name="creditcardinfo" value="radiocc2" data-role="none">&nbsp;<span class="purple">No, I want to use another Credit Card</span><br>(please fill in your credit card details below)</label>
+      <fieldset id="existingcc" disabled>
+			<input type="number" name="existingcc" value="" class="grey-text-input" required >
+      </fieldset>
+        	 <label for="cc-details1"><input type="radio" id="radiocc2" name="creditcardinfo" value="radiocc2" data-role="none">&nbsp;<span class="purple">No, I want to use another Credit Card</span><br>(please fill in your credit card details below)</label>
              
-
+    <fieldset id="othercc" disabled required>
 			 <label for="cardholder-name"><h3>Cardholder Name</h3></label>
-			 <input type="text" name="cardholdername" id="cardholdername" value="" class="grey-text-input">
+			 <input type="text" name="cardholdername" id="cardholdername" value="" class="grey-text-input" required >
              
              <label for="cc-number"><h3>Credit Card Number</h3></label>
-			 <input type="text" name="cardnumber" id="cardnumber" value="" class="grey-text-input">
+			 <input type="text" name="cardnumber" id="cardnumber" value="" class="grey-text-input" required >
              
              <label for="exp-date"><h3>Expiration Date</h3></label>
-			 <input type="month" name="inputccdate" id="expdate" value="">
+			 <input type="month" name="inputccdate" id="expdate" value="" required >
              
              <div class="ui-grid-a">
               <div class="ui-block-a">
                 <label for="number-pattern"><h3>CVC&nbsp;<img src="images/qnmark.png"></h3></label>
-				<input type="number" name="inputcvc" pattern="[0-9]*" id="inputcvc" value="">
+				<input type="number" name="inputcvc" pattern="[0-9]*" id="inputcvc" value="" required>
               </div>
              </div><!--end-grid-a-->
-
+    </fieldset>
 
 
 
@@ -258,24 +258,47 @@ die();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="js/index.js"></script>
 
+<!--   <script type="text/javascript">
+    $("form").submit(function(e) {
+
+    var ref = $(this).find("[required]");
+
+    $(ref).each(function(){
+        if ( $(this).val() == '' )
+        {
+            alert("Required field should not be blank.");
+
+            $(this).focus();
+
+            e.preventDefault();
+            return false;
+        }
+    });  return true;
+});
+    
+  </script>
+ -->
     <script type="text/javascript">
     $(document).ready(function() {
 
 
 
-    $("#radiocc1").click(function() {
-      $("#othercc").prop("disabled", true);
-    $("#existingcc").prop("disabled", false);
-    
+    $("#radiocc1").click(function() {  
+    $("#existingcc").removeAttr("disabled");
+    $("#proceed").removeAttr("disabled");
+    $("#othercc").attr("disabled","disabled");
 
-
+ // onclick="document.getElementById('proceed').disabled = false;"
     });
 
     $("#radiocc2").click(function() {
 
-      $("#othercc").prop("disabled", false);
-      $("#existingcc").prop("disabled", true);
+      // $("#othercc").prop("disabled", false);
+      // $("#existingcc").prop("disabled", true);
 
+    $("#othercc").removeAttr("disabled");
+    $("#proceed").removeAttr("disabled");
+    $("#existingcc").attr("disabled","disabled");
 
     });
 

@@ -73,7 +73,7 @@ if (isset($_POST['addtocart1'])){
       <div data-role="main" class="ui-content content">
         <a href="https://www.perfectressusorder.com/mobile/view-cart.php"><img src="../images/cart.png"></a><br><br>
         <img src="../images/breadcrumbs2.jpg" class="img-autoscale">
-        <h2 class="bold purple">Starter Kit</h2>
+        <h2 class="bold purple">Kit Options</h2>
         
         <h3>Select Item:</h3>
         <div class="ui-grid-a">
@@ -87,7 +87,7 @@ if (isset($_POST['addtocart1'])){
               <div class="ui-block-b">
               	<a href="tapeweft-start-kit.php" rel="external">
                 <img src="https://www.perfectressusorder.com/img/starterkits/starter2.png" class="img-autoscale imgspace">
-                <h3 class="center">PERFECTRESS TAPE WEFT STARTER KIT<br><span class="purple">USD$195</span></h3>
+                <h3 class="center">PERFECTRESS TAPE WEFT STARTER KIT<br><span class="purple">USD$199</span></h3>
                 </a>
               </div>
         </div><!--end-grid-a-->
@@ -102,7 +102,7 @@ if (isset($_POST['addtocart1'])){
               
               <div class="ui-block-b">
                 <a href="mw-start-kit.php" rel="external">
-                <img src="https://www.perfectressusorder.com/img/starterkits/multiweft.jpg" class="img-autoscale imgspace">
+<!--                 <img src="https://www.perfectressusorder.com/img/starterkits/multiweft.jpg" class="img-autoscale imgspace">    -->            <img src="http://placehold.it/162x225" class="img-autoscale imgspace">
                 <h3 class="center">PERFECTRESS MULTI WEFT STARTER KIT<br><span class="purple">USD$299</span></h3>
                 </a>
               </div>

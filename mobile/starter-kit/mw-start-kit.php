@@ -131,11 +131,12 @@ switch($_GET["action"]) {
         <img src="../images/breadcrumbs2.jpg" class="img-autoscale">
         <h2 class="bold purple">Starter Kit</h2>
         
-        <center><img src="https://www.perfectressusorder.com/img/starterkits/starter1.png" width="250">
+        <center><!-- <img src="https://www.perfectressusorder.com/img/starterkits/multiweft.jpg" width="250"> -->
+        <img src="http://placehold.it/162x225" width="250">
         <h3><u>PERFECTRESS MULTI WEFT STARTER KIT</u></h3>
         </center>
         
-        <p>Contents:<br>Adaptability Ring, Transformer LW, Reformer, Hair Pulling Loops, Hair Drawing Tool, Connection Points, Perfect Clips, Velcro Strips, Video, Tri-folds, Aluminium Case</p>
+        <p>Contents:<br>Adaptability Ring, Transformer LW, Reformer, Hair Pulling Loops, Hair Drawing Tool, Connection Points, Perfect Clips, Velcro Strips, Tri-folds, Aluminium Case</p>
         
         <form method="post" id="addtocartform" action="mw-start-kit.php?action=add&code=<?php echo "KIT" ?>" rel="external" data-ajax="false">
         <div class="ui-grid-a">

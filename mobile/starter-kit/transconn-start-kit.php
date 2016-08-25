@@ -136,7 +136,7 @@ switch($_GET["action"]) {
         <h3><u>PERFECTRESS CONNECTIONS STARTER KIT</u></h3>
         </center>
         
-        <p>Contents:<br>Adaptability Ring, Transformer C, Reformer, Connector L, Connector L Loops, Velcro Strips, Video, Tri-folds, Aluminium Case.</p>
+        <p>Contents:<br>Adaptability Ring, Transformer C, Reformer, Connector L, Connector L Loops, Velcro Strips, Tri-folds, Aluminium Case.</p>
         
         <form method="post" id="addtocartform" action="transconn-start-kit.php?action=add&code=<?php echo "KIT" ?>" rel="external" data-ajax="false">
         <div class="ui-grid-a">

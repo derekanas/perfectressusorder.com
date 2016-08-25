@@ -24,6 +24,7 @@ $cnfrmshipcity = $_SESSION['city'];
 $cnfrmshipstate = $_SESSION['state'];
 $cnfrmshipcode = $_SESSION['zipcode'];
 $cnfrmshipcountry = $_SESSION['country'];
+$cnfrmsalonname = $_SESSION['salonname'];
 $remarks = $_SESSION['remarks'];
 $order_number = $_SESSION['order_number'];
 require_once("db/dbcontroller.php");
@@ -185,6 +186,7 @@ $_SESSION['sumshipcountry'] = $shipcountry;
       <p style="padding:5px;">Phone Number:</p>
       <p style="padding:5px;">First Name:</p>
       <p style="padding:5px;">Last Name:</p>  
+      <p style="padding:5px;">Salon Name:</p>  
 
       </div>
 
@@ -193,6 +195,7 @@ $_SESSION['sumshipcountry'] = $shipcountry;
       <p style="padding:5px;"><?php echo $cnfrmphone ?> </p>
       <p style="padding:5px;"><?php echo $cnfrmfname ?> </p>
       <p style="padding:5px;"><?php echo $cnfrmlname ?> </p> 
+      <p style="padding:5px;"><?php echo $cnfrmsalonname ?> </p> 
       </div>
 
 

@@ -13,6 +13,7 @@ session_start();
   $cn_shipcountry = $_SESSION['country'];
   $cn_ordernumber = $_SESSION['order_number'];
   $cn_remarks = $_SESSION['remarks'];
+  $cn_salonname = $_SESSION['salonname'];
 
   // cc details
   $cn_existingcc  = $_SESSION['existingcc'];
@@ -78,10 +79,12 @@ switch($_GET["action"]) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
  
-    $email_to = "perfectressusorderform@gmail.com,perfectressusorder@perfectress.us,".$cn_email."";
+    $email_to = "perfectressusorderform@gmail.com";
     $autoemail_subject = "AUTO REPLY: Your Order Details From Perfectress US Online Form";
-    $email_subject = "Order Details From Perfectress US Online Form";
-	  $email_from = "noreply-orders@perfectressusorder.com";
+    $email_subject = "PO#:".$cn_ordernumber." Order Details From Perfectress US Online Form";
+	  $email_from = "orders@perfectressusorder.com";
+    $finemail_from = "finance_orders@perfectressusorder.com";
+    $noreply_email = "noreply-orders@perfectressusorder.com";
 
     function died($error) {
  
@@ -108,8 +111,9 @@ switch($_GET["action"]) {
  
     $email_message .= "First Name: ".$cn_fname."<br/>";
  
-    $email_message .= "Last Name: ".$cn_lname."<br/><br/>";
+    $email_message .= "Last Name: ".$cn_lname."<br/>";
 
+    $email_message .= "Salon Name: ".$cn_salonname."<br/><br/>";
 
     $email_message .= "<strong>Shipping Details:</strong><br/>";
 
@@ -129,7 +133,16 @@ switch($_GET["action"]) {
 
     $email_message .= "<strong>Payment Details:</strong><br/>";
 
-    $email_message .= "Existing CC? : XXXX - XXXX - XXXX -".$cn_existingcc."<br/>";
+    if(!empty($cn_existingcc)){
+        $email_message .= "Existing CC? : XXXX - XXXX - XXXX -".$cn_existingcc."<br/>";
+    }
+
+   else{
+
+    $email_message .="<strong>Credit Card Information has been sent through Finance Email</strong><br/>";
+   }
+
+  
     // $email_message .= "New CC?: ".$cn_inputcc."<br/>";
     // $email_message .= "New CC Expire Date: ".$cn_inputccdate."<br/>";
     // $email_message .= "New CC CVC: ".$cn_inputcvc."<br/>";
@@ -151,13 +164,15 @@ switch($_GET["action"]) {
       $item_total += ($item["price"]*$item["quantity"]);
      }
 
-      $email_message .= "<strong>Total Price:</strong>".$item_total."";
+
+      $finalamount = ($_SESSION['sumshippref'] + $item_total);
+      $email_message .= "<strong>Total Price:</strong>".$finalamount."";
       // $email_message .= "Total Cost:".$finalamount."<br/>";
 
 // ===================================for fin===================================
 
 $fin_email = "fin.perfectressusorder@gmail.com";
-$fin_emailsubject= "Finance Order Form Details";
+$fin_emailsubject= "PO#:".$cn_ordernumber." Finance Order Form Details";
 
   $fin_message .= "<strong>Customer Details:</strong><br/>";
     $fin_message .= "Email: ".$cn_email."<br/>";
@@ -166,8 +181,9 @@ $fin_emailsubject= "Finance Order Form Details";
  
     $fin_message .= "First Name: ".$cn_fname."<br/>";
  
-    $fin_message .= "Last Name: ".$cn_lname."<br/><br/>";
+    $fin_message .= "Last Name: ".$cn_lname."<br/>";
 
+    $fin_message .= "Salon Name: ".$cn_salonname."<br/><br/>";
 
     $fin_message .= "<strong>Shipping Details:</strong><br/>";
 
@@ -207,8 +223,8 @@ $fin_emailsubject= "Finance Order Form Details";
       $fin_message .= "Price: ".$item["price"]. "<br/><br/>";
       $item_total += ($item["price"]*$item["quantity"]);
      }
-
-      $fin_message .= "<strong>Total Price:</strong>".$item_total."";
+           $finalamount = ($_SESSION['sumshippref'] + $item_total);
+      $fin_message .= "<strong>Total Price:</strong>".$finalamount."";
 
 
 
@@ -236,8 +252,9 @@ $fin_emailsubject= "Finance Order Form Details";
  
     $auto_message .= "First Name: ".$cn_fname."<br/>";
  
-    $auto_message .= "Last Name: ".$cn_lname."<br/><br/>";
+    $auto_message .= "Last Name: ".$cn_lname."<br/>";
 
+    $auto_message .= "Salon Name: ".$cn_salonname."<br/><br/>";
 
     $auto_message .= "<strong>Your Shipping Details:</strong><br/>";
 
@@ -270,8 +287,8 @@ $fin_emailsubject= "Finance Order Form Details";
       $auto_message .= "Price: ".$item["price"]. "<br/><br/>";
       $item_total += ($item["price"]*$item["quantity"]);
      }
-
-      $auto_message .= "<strong>Your Total Price:</strong>".$item_total."";
+           $finalamount = ($_SESSION['sumshippref'] + $item_total);
+      $auto_message .= "<strong>Your Total Price:</strong>".$finalamount."";
       // $email_message .= "Total Cost:".$finalamount."<br/>";
 
 
@@ -280,14 +297,32 @@ $fin_emailsubject= "Finance Order Form Details";
 
 // create email headers
 $headers = 'MIME-Version: 1.0' . "\r\n";
-                $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-                $headers .= "From:". $email_from . "\r\n" .
-                        "Reply-To:". $cn_email. "\r\n" .
-                        "X-Mailer: PHP/" . phpversion();
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers .= "From:". $email_from . "\r\n" .
+        "Reply-To:". $cn_email. "\r\n" .
+        "X-Mailer: PHP/" . phpversion();
 
-$auto_mail = mail($cn_email, $autoemail_subject, $auto_message, $headers); 
+
+
+$auto_headers = 'MIME-Version: 1.0' . "\r\n";
+$auto_headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$auto_headers .= "From:". $noreply_email . "\r\n" .
+        "Reply-To:". $cn_email. "\r\n" .
+        "X-Mailer: PHP/" . phpversion();
+
+
+
+$fin_headers = 'MIME-Version: 1.0' . "\r\n";
+$fin_headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$fin_headers .= "From:". $finemail_from . "\r\n" .
+        "Reply-To:". $cn_email. "\r\n" .
+        "X-Mailer: PHP/" . phpversion();
+
+
+
+$auto_mail = mail($cn_email, $autoemail_subject, $auto_message, $auto_headers); 
 if (!empty($_SESSION['inputcc'])){
-$fin_mail = mail($fin_email, $fin_emailsubject, $fin_message, $headers);
+$fin_mail = mail($fin_email, $fin_emailsubject, $fin_message, $fin_headers);
 }
 
 $mail = mail($email_to, $email_subject, $email_message, $headers); 

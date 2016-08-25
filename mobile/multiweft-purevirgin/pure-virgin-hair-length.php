@@ -89,7 +89,7 @@ if (isset($_POST['addtocart1'])){
                 <label for="hair-size"><h3>Size</h3></label>
 <!--             	<input type="text" name="input-hair-size" id="hair-size" value="Single Plus (1 pack - 1pc)" class="grey-border-input"> -->
                 <select name="input-hair-size" id="hair-size">
-                    <option value="SINGLEPLUS">Single Plus (1 pack - 8pcs)</option>
+                    <option value="SINGLEPLUS">Single Plus (1 pack - 1pc)</option>
                 </select>
             </div>
 			<button type="submit" form="addtocartform1" name="addtocart1" class="ui-btn ui-corner-all btn-purple">NEXT ></button>

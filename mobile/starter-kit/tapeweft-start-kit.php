@@ -135,7 +135,7 @@ switch($_GET["action"]) {
         <h3><u>PERFECTRESS TAPE WEFT STARTER KIT</u></h3>
         </center>
         
-        <p>Contents:<br>Adaptability Ring, Tape Pressing Tool, Tape Removing Tool, Precut Adhesive Tapes, Prefab Tapes, Removing Mats, Velcro Strips, Video, Trifolds, Aluminium Case.</p>
+        <p>Contents:<br>Adaptability Ring, Tape Pressing Tool, Tape Removing Tool, Precut Adhesive Tapes, Prefab Tapes, Removing Mats, Velcro Strips, Trifolds, Aluminium Case.</p>
         
         <form method="post" id="addtocartform" action="tapeweft-start-kit.php?action=add&code=<?php echo "KIT" ?>" rel="external" data-ajax="false">
         <div class="ui-grid-a">

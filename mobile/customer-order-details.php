@@ -78,48 +78,50 @@ $db_handle = new DBController();
         <form action="order-summary.php" method="post" rel="external" data-ajax="false">
 		
             <label for="email-add"><h3>Email Address</h3></label>
-            <input type="text" name="email-add" id="email-add" class="grey-border-input" value="<?php echo $_SESSION['emailadd']; ?>">
+            <input type="text" readonly="readonly" name="email-add" id="email-add" class="grey-border-input" value="<?php echo $_SESSION['emailadd']; ?>">
             
             <label for="first-name"><h3>First Name</h3></label>
-            <input type="text" name="first-name" id="first-name" class="grey-border-input" value="<?php echo $_SESSION['firstname']; ?>">
-        
+            <input type="text" readonly="readonly" name="first-name" id="first-name" class="grey-border-input" value="<?php echo $_SESSION['firstname']; ?>">
+            
+            <label for="last-name"><h3>Last Name</h3></label>
+            <input type="text" readonly="readonly"  name="last-name" id="last-name" class="grey-border-input" value="<?php echo $_SESSION['lastname']; ?>">
         
 			<div class="ui-grid-a">
               <div class="ui-block-a in-between-spacing">
-                <label for="last-name"><h3>Last Name</h3></label>
-                <input type="text" name="last-name" id="last-name" class="grey-border-input" value="<?php echo $_SESSION['lastname']; ?>">
+              <label for="salon-name"><h3>Salon Name</h3></label>
+              <input type="text" readonly="readonly"  name="salon-name" id="salon-name" class="grey-border-input" value="<?php echo $_SESSION['salonname']; ?>">
               </div>
               
               <div class="ui-block-b">
                 <label for="tel"><h3>Phone No.</h3></label>
-                <input type="tel" name="tel" id="tel" class="grey-border-input" value="<?php echo $_SESSION['phone']; ?>">
+                <input type="tel" readonly="readonly"  name="tel" id="tel" class="grey-border-input" value="<?php echo $_SESSION['phone']; ?>">
           	  </div>
 			</div><!--end-grid-a-->
         
         	<label for="shipping-address"><h3>Shipping Address</h3></label>
-			<textarea cols="40" rows="4" name="shipping-address" id="shipping-address"><?php echo $_SESSION['address']; ?></textarea>
+			<textarea cols="40" rows="4" readonly="readonly" name="shipping-address" id="shipping-address"><?php echo $_SESSION['address']; ?></textarea>
         
         	<div class="ui-grid-a">
               <div class="ui-block-a in-between-spacing">
                 <label for="zip-code"><h3>Zip Code</h3></label>
-                <input type="text" name="zip-code" id="zip-code" class="grey-border-input" value="<?php echo $_SESSION['zipcode']; ?>">
+                <input type="text" readonly="readonly" name="zip-code" id="zip-code" class="grey-border-input" value="<?php echo $_SESSION['zipcode']; ?>">
               </div>
               
               <div class="ui-block-b">
                 <label for="city"><h3>City</h3></label>
-                <input type="text" name="city" id="city" class="grey-border-input" value="<?php echo $_SESSION['city']; ?>">
+                <input type="text" readonly="readonly" name="city" id="city" class="grey-border-input" value="<?php echo $_SESSION['city']; ?>">
                 </div>
              </div><!--end-grid-a-->
              
              <div class="ui-grid-a">
               <div class="ui-block-a in-between-spacing">
                 <label for="state"><h3>State</h3></label>
-                <input type="text" name="state" id="state" class="grey-border-input" value="<?php echo $_SESSION['state']; ?>">
+                <input type="text" readonly="readonly" name="state" id="state" class="grey-border-input" value="<?php echo $_SESSION['state']; ?>">
               </div>
               
               <div class="ui-block-b">
                 <label for="country"><h3>Country</h3></label>
-                <input type="text" name="country" id="country" class="grey-border-input" value="<?php echo $_SESSION['country']; ?>">
+                <input type="text" readonly="readonly" name="country" id="country" class="grey-border-input" value="<?php echo $_SESSION['country']; ?>">
                 </div>
              </div><!--end-grid-a-->
              
@@ -129,7 +131,7 @@ $db_handle = new DBController();
              
              <div class="ui-grid-a">
              	<div class="ui-block-a">
-            	 <label for="selectregion-wc"><input type="radio" name="selectregion" id="selectregion-wc" value="West Coast Region">West Coast Region</label>
+            	 <label for="selectregion-wc"><input type="radio" name="selectregion" id="selectregion-wc" value="West Coast Region" required>West Coast Region</label>
                 </div>
               
                 <div class="ui-block-b">
@@ -195,6 +197,28 @@ $db_handle = new DBController();
     </script>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script type="text/javascript">
+      $("form").submit(function(e) {
+
+    var ref = $(this).find("[required]");
+
+    $(ref).each(function(){
+        if ( $(this).val() == '' )
+        {
+            alert("Required field should not be blank.");
+
+            $(this).focus();
+
+            e.preventDefault();
+            return false;
+        }
+    });  return true;
+});
+
+
+  </script>
+
 
 <script type="text/javascript">
 document.getElementById("selectregion-wc").onclick = function(){
