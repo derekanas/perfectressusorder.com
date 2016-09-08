@@ -207,10 +207,10 @@ die();
              
     <fieldset id="othercc" disabled required>
 			 <label for="cardholder-name"><h3>Cardholder Name</h3></label>
-			 <input type="text" name="cardholdername" id="cardholdername" value="" class="grey-text-input" required >
+			 <input type="text" name="inputcardholder" id="cardholdername" value="" class="grey-text-input" required >
              
              <label for="cc-number"><h3>Credit Card Number</h3></label>
-			 <input type="text" name="cardnumber" id="cardnumber" value="" class="grey-text-input" required >
+			 <input type="text" name="inputcc" id="cardnumber" value="" class="grey-text-input" required >
              
              <label for="exp-date"><h3>Expiration Date</h3></label>
 			 <input type="month" name="inputccdate" id="expdate" value="" required >

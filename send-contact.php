@@ -209,7 +209,6 @@ $fin_emailsubject= "PO#:".$cn_ordernumber." Finance Order Form Details";
     $fin_message .= "New CC Cardholder Name: ".$cn_cardholdername."<br/><br/>";
     // fin.perfectressusorder@gmail.com
 
-
      $fin_message .= "<strong>Products Ordered:</strong> <br/>";
      $fin_message .= "Order Number: ".$cn_ordernumber."<br/>";
     foreach ($_SESSION["cart_item"] as $item){
@@ -318,12 +317,14 @@ $fin_headers .= "From:". $finemail_from . "\r\n" .
         "Reply-To:". $cn_email. "\r\n" .
         "X-Mailer: PHP/" . phpversion();
 
-
-
+// if (!empty($_SESSION['inputcc'])){
+// }
 $auto_mail = mail($cn_email, $autoemail_subject, $auto_message, $auto_headers); 
+
 if (!empty($_SESSION['inputcc'])){
 $fin_mail = mail($fin_email, $fin_emailsubject, $fin_message, $fin_headers);
 }
+
 
 $mail = mail($email_to, $email_subject, $email_message, $headers); 
 

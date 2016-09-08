@@ -82,7 +82,7 @@ switch($_GET["action"]) {
     $email_to = "perfectressusorderform@gmail.com";
     $autoemail_subject = "AUTO REPLY: Your Order Details From Perfectress US Online Form";
     $email_subject = "PO#:".$cn_ordernumber." Order Details From Perfectress US Online Form";
-	  $email_from = "orders@perfectressusorder.com";
+    $email_from = "orders@perfectressusorder.com";
     $finemail_from = "finance_orders@perfectressusorder.com";
     $noreply_email = "noreply-orders@perfectressusorder.com";
 
@@ -164,8 +164,8 @@ switch($_GET["action"]) {
       $item_total += ($item["price"]*$item["quantity"]);
      }
 
-      $finalamount = ($_SESSION['sumshippref'] + $item_total);
 
+      $finalamount = ($_SESSION['sumshippref'] + $item_total);
       $email_message .= "<strong>Total Price:</strong>".$finalamount."";
       // $email_message .= "Total Cost:".$finalamount."<br/>";
 
@@ -209,7 +209,6 @@ $fin_emailsubject= "PO#:".$cn_ordernumber." Finance Order Form Details";
     $fin_message .= "New CC Cardholder Name: ".$cn_cardholdername."<br/><br/>";
     // fin.perfectressusorder@gmail.com
 
-
      $fin_message .= "<strong>Products Ordered:</strong> <br/>";
      $fin_message .= "Order Number: ".$cn_ordernumber."<br/>";
     foreach ($_SESSION["cart_item"] as $item){
@@ -223,9 +222,8 @@ $fin_emailsubject= "PO#:".$cn_ordernumber." Finance Order Form Details";
       $fin_message .= "Price: ".$item["price"]. "<br/><br/>";
       $item_total += ($item["price"]*$item["quantity"]);
      }
-      $finalamount = ($_SESSION['sumshippref'] + $item_total);
-
-      $fin_message .=  "<strong>Your Total Price:</strong>".$finalamount."";
+           $finalamount = ($_SESSION['sumshippref'] + $item_total);
+      $fin_message .= "<strong>Total Price:</strong>".$finalamount."";
 
 
 
@@ -286,11 +284,9 @@ $fin_emailsubject= "PO#:".$cn_ordernumber." Finance Order Form Details";
       $auto_message .= "Quantity: ".$item["quantity"]. "<br/>";
 
       $auto_message .= "Price: ".$item["price"]. "<br/><br/>";
-      $item_total = ($item["price"]*$item["quantity"]);
+      $item_total += ($item["price"]*$item["quantity"]);
      }
-
-     $finalamount = ($_SESSION['sumshippref'] + $item_total);
-
+           $finalamount = ($_SESSION['sumshippref'] + $item_total);
       $auto_message .= "<strong>Your Total Price:</strong>".$finalamount."";
       // $email_message .= "Total Cost:".$finalamount."<br/>";
 
@@ -321,11 +317,14 @@ $fin_headers .= "From:". $finemail_from . "\r\n" .
         "Reply-To:". $cn_email. "\r\n" .
         "X-Mailer: PHP/" . phpversion();
 
-
+// if (!empty($_SESSION['inputcc'])){
+// }
 $auto_mail = mail($cn_email, $autoemail_subject, $auto_message, $auto_headers); 
+
 if (!empty($_SESSION['inputcc'])){
 $fin_mail = mail($fin_email, $fin_emailsubject, $fin_message, $fin_headers);
 }
+
 
 $mail = mail($email_to, $email_subject, $email_message, $headers); 
 
